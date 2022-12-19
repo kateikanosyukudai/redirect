@@ -1,7 +1,7 @@
-/*
-* README.mdファイルを追加するとindex.htmlの代わりになってしまうので "絶対に" 追加しないでください
-* 404.html(このページ)が機能しなくなります
-*/
+<!--
+    README.mdファイルを追加するとindex.htmlの代わりになってしまうので "絶対に" 追加しないでください
+    404.html(このページ)が機能しなくなります
+ -->
 
 <!DOCTYPE html>
 <html lang="ja">
@@ -14,7 +14,7 @@
   </body>
   <script>
     const getURL = () =>location.hash.slice(1)
-    document.body.innerHTML = `<h1>リダイレクトの警告</h1>"${getURL()}"にリダイレクトしようとしています<br>数秒経ってもリダイレクトしない場合には<a href="${getURL()}">こちら</a>をクリックしてください`
+    document.body.innerHTML = `<h1>リダイレクトの警告</h1>"${getURL()}"にリダイレクトしようとしています<br>数秒経ってもリダイレクトしない場合には<a href="https://www.google.co.jp/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&ved=2ahUKEwi20sue2oX8AhXSNEQIHefVDiMQFnoECAkQAQ&url=${getURL()}">こちら</a>をクリックしてください`
 
     /* https://laboradian.com/js-wait を改変*/
     
