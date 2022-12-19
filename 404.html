@@ -11,11 +11,11 @@
     const getURL = () =>location.hash.slice(1)
     document.body.innerHTML = `<h1>リダイレクトの警告</h1>"${getURL()}"にリダイレクトしようとしています<br>数秒経ってもリダイレクトしない場合には<a href="${getURL()}">こちら</a>をクリックしてください`
 
-    /* https://laboradian.com/js-wait */
+    /* https://laboradian.com/js-wait を改変*/
     var wait = function(sec) {
       return function() {
         return new Promise(function(resolve/*, reject*/) {
-          setTimeout(resolve, sec*1000)
+          for(var i=0; i<2; i++)setTimeout(resolve,1000)
         });
       }
     };
