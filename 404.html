@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-<meta charset="utf-8">
-<title>リダイレクト</title>
-</head>
-<body>
-<h1>リダイレクトの警告</h1>
-<div id="site"></div>にリダイレクトしようとしています
-</body>
+  <head>
+    <meta charset="utf-8">
+    <title>リダイレクト</title>
+  </head>
+  <body>
+    <noscript>JavaScriptを有効にしてください</noscript>
+  </body>
+  <script>
+    const getURL = () =>location.hash.slice( 1 )
+    document.body.innerHTML = `<h1>リダイレクトの警告</h1>${getURL()}にリダイレクトしようとしています<br>数秒経ってもリダイレクトしない場合には<a href="${getURL()}">こちら</a>をクリックしてください`
+  </script>
 </html>
