@@ -16,8 +16,8 @@
     var wait = function(sec) {
       return function() {
         return new Promise(function(resolve/*, reject*/) {
-          setTimeout(resolve,1000)
-        }
+          setTimeout(resolve, 1000)
+        });
       }
     };
     Promise.resolve()
