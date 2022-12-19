@@ -12,18 +12,21 @@
     document.body.innerHTML = `<h1>リダイレクトの警告</h1>"${getURL()}"にリダイレクトしようとしています<br>数秒経ってもリダイレクトしない場合には<a href="${getURL()}">こちら</a>をクリックしてください`
 
     /* https://laboradian.com/js-wait を改変*/
+    
     var wait = function(sec) {
       return function() {
         return new Promise(function(resolve/*, reject*/) {
-          for(var i=0; i<2; i++){
-            setTimeout(resolve,1000)
-            document.title = `リダイレクト｜${sec-i}`
-          }
-        });
+          setTimeout(resolve,1000)
+        }
       }
     };
     Promise.resolve()
-      .then(wait(5)) // ここで10秒待つ（「Promiseオブジェクトを返す関数」を thenに渡しています）
+      .then(function(){
+      for(var i=0; i<2; i++){
+        wait(1)
+        document.title=5-i
+      }
+    }) // ここで10秒待つ（「Promiseオブジェクトを返す関数」を thenに渡しています）
       .then(function() {
       // ここに目的の処理を書きます。
       location.href = getURL()
