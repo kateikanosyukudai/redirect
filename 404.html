@@ -15,7 +15,10 @@
     var wait = function(sec) {
       return function() {
         return new Promise(function(resolve/*, reject*/) {
-          for(var i=0; i<2; i++)setTimeout(resolve,1000)
+          for(var i=0; i<2; i++){
+            setTimeout(resolve,1000)
+            document.title = `リダイレクト｜${3-i}`
+          }
         });
       }
     };
