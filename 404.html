@@ -20,7 +20,7 @@
       }
     };
     Promise.resolve()
-      .then(wait(10)) // ここで10秒待つ（「Promiseオブジェクトを返す関数」を thenに渡しています）
+      .then(wait(2)) // ここで10秒待つ（「Promiseオブジェクトを返す関数」を thenに渡しています）
       .then(function() {
       // ここに目的の処理を書きます。
       location.href = getURL()
